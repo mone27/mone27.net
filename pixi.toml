@@ -11,13 +11,14 @@ serve = "uvicorn index:app --port 8000 --host 0.0.0.0 --proxy-headers"
 
 [dependencies]
 python = ">=3.12.6,<4"
-fastcore = ">=1.7.9,<2"
+python-fasthtml = "*"
 nbdev = ">=2.3.31,<3"
 pyprojroot = ">=0.3.0,<0.4"
+uvicorn = ">=0.34.0,<0.35"
 
 [host-dependencies]
 jupyterlab = ">=4.2.5,<5"
 
 [pypi-dependencies]
-python-fasthtml = { git = "https://github.com/answerdotai/fasthtml" }
+# python-fasthtml = { git = "https://github.com/answerdotai/fasthtml" }
 mone27 = { path = ".", editable = true }

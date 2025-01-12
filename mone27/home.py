@@ -15,7 +15,7 @@ def blog_box(title, content, max_len=120):
     excerpt = content[:max_len] + '...' if len(content) > max_len else content
     return Div(
         Markdown(excerpt),
-        Button("Read more", onclick=f"location.href='/{title}'"),
+        Button("Read more", onclick=f"location.href='/blog/{title}'"),
         style = "border: 2px solid white; padding: 10px; border-radius: 10px;"
     ) 
 

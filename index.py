@@ -21,7 +21,7 @@ def get(req):
         )
     )
 
-@rt('/{blog_slug}')
+@rt('/blog/{blog_slug}')
 def get(blog_slug: str):
     blog = get_blogs().filter(lambda x: x[0] == blog_slug)
     if blog:
@@ -29,6 +29,15 @@ def get(blog_slug: str):
         return Title(title), Container(Markdown(content))
     else:
         return Titled("Not Found", P(blog_slug))
+
+
+@rt('/ff-dropdown-bug')
+def get(req):
+    options = [Option(f"Option {i}", value=f"value_{i}") for i in range(1, 101)]
+    return Titled("Dropdown Example",
+        H2("Dropdown with Many Options"),
+        Select(*options)
+    )
 
 
 serve()
