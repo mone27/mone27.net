@@ -4,3 +4,9 @@ services:
     ports:
       - "11007:8000"
     restart: always
+    volumes:
+      - .:/app
+      - pixi:/app/.pixi
+
+volumes:
+  pixi:
